@@ -83,7 +83,7 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationBar()
+        setupNavigationItems()
         setupLayout()
     }
 }
@@ -111,17 +111,28 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
 }
 
 private extension ProfileViewController {
-    func setupNavigationBar() {
+    func setupNavigationItems() {
         navigationItem.title = "UserName"
         
         let moreButton = UIBarButtonItem(
             image: UIImage(systemName: "ellipsis"),
             style: .plain,
             target: self,
-            action: nil
+            action: #selector(didTapRightBarButton)
         )
         
         navigationItem.rightBarButtonItem = moreButton
+    }
+    
+    @objc func didTapRightBarButton() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        [
+            UIAlertAction(title: "Change member information", style: .default),
+            UIAlertAction(title: "Resign Membership", style: .destructive),
+            UIAlertAction(title: "close", style: .cancel)
+        ].forEach{ actionSheet.addAction($0) }
+        
+        present(actionSheet, animated: true)
     }
     
     func setupLayout() {
