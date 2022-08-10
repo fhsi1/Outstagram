@@ -36,6 +36,7 @@ extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath) as? FeedTableViewCell
         cell?.selectionStyle = .none
+        cell?.setup()
         
         return cell ?? UITableViewCell()
     }

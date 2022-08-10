@@ -15,6 +15,7 @@
 		10EC6A2228A36B0E00E583C6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 10EC6A2128A36B0E00E583C6 /* SnapKit */; };
 		10EC6A2428A36D2400E583C6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC6A2328A36D2400E583C6 /* TabBarController.swift */; };
 		10EC6A2728A3816100E583C6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC6A2628A3816100E583C6 /* FeedTableViewCell.swift */; };
+		10EC6A2928A38DE200E583C6 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC6A2828A38DE200E583C6 /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		10EC6A1A28A36A8C00E583C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10EC6A2328A36D2400E583C6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		10EC6A2628A3816100E583C6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		10EC6A2828A38DE200E583C6 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				10EC6A2328A36D2400E583C6 /* TabBarController.swift */,
 				10EC6A1028A36A8B00E583C6 /* FeedViewController.swift */,
 				10EC6A2628A3816100E583C6 /* FeedTableViewCell.swift */,
+				10EC6A2828A38DE200E583C6 /* UIButton+.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10EC6A1128A36A8B00E583C6 /* FeedViewController.swift in Sources */,
+				10EC6A2928A38DE200E583C6 /* UIButton+.swift in Sources */,
 				10EC6A2428A36D2400E583C6 /* TabBarController.swift in Sources */,
 				10EC6A0D28A36A8B00E583C6 /* AppDelegate.swift in Sources */,
 				10EC6A0F28A36A8B00E583C6 /* SceneDelegate.swift in Sources */,
