@@ -12,7 +12,7 @@ final class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         // TabBar setting
-        let feedViewController = UIViewController()
+        let feedViewController = UINavigationController(rootViewController: FeedViewController())
         feedViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
         
         let profileViewController = UIViewController()
