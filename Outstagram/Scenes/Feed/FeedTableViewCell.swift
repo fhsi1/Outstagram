@@ -131,13 +131,12 @@ final class FeedTableViewCell: UITableViewCell {
             $0.leading.equalTo(likeButton.snp.leading)
             $0.trailing.equalTo(bookmarkButton.snp.trailing)
             $0.top.equalTo(currentLikedCountLabel.snp.bottom).offset(8.0)
-            $0.bottom.equalToSuperview().inset(16.0)
         }
         
         dateLabel.snp.makeConstraints {
             $0.leading.equalTo(likeButton.snp.leading)
             $0.trailing.equalTo(bookmarkButton.snp.trailing)
-            $0.top.equalTo(currentLikedCountLabel.snp.bottom).offset(8.0)
+            $0.top.equalTo(contentsLabel.snp.bottom).offset(8.0)
             $0.bottom.equalToSuperview().inset(16.0)
         }
     }
