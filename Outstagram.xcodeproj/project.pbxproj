@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1069859D28A3CF07003FF0CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1069859C28A3CF07003FF0CB /* ProfileViewController.swift */; };
 		10B9131028A3E61B00D9DB2C /* ProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9130F28A3E61B00D9DB2C /* ProfileDataView.swift */; };
+		10B9131228A3F1B500D9DB2C /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9131128A3F1B500D9DB2C /* ProfileCollectionViewCell.swift */; };
 		10EC6A0D28A36A8B00E583C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC6A0C28A36A8B00E583C6 /* AppDelegate.swift */; };
 		10EC6A0F28A36A8B00E583C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC6A0E28A36A8B00E583C6 /* SceneDelegate.swift */; };
 		10EC6A1128A36A8B00E583C6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EC6A1028A36A8B00E583C6 /* FeedViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		1069859C28A3CF07003FF0CB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		10B9130F28A3E61B00D9DB2C /* ProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataView.swift; sourceTree = "<group>"; };
+		10B9131128A3F1B500D9DB2C /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		10EC6A0928A36A8B00E583C6 /* Outstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Outstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10EC6A0C28A36A8B00E583C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10EC6A0E28A36A8B00E583C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				1069859C28A3CF07003FF0CB /* ProfileViewController.swift */,
+				10B9131128A3F1B500D9DB2C /* ProfileCollectionViewCell.swift */,
 				10B9130F28A3E61B00D9DB2C /* ProfileDataView.swift */,
 			);
 			path = Profile;
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10EC6A1128A36A8B00E583C6 /* FeedViewController.swift in Sources */,
+				10B9131228A3F1B500D9DB2C /* ProfileCollectionViewCell.swift in Sources */,
 				10EC6A2928A38DE200E583C6 /* UIButton+.swift in Sources */,
 				10EC6A2428A36D2400E583C6 /* TabBarController.swift in Sources */,
 				10EC6A0D28A36A8B00E583C6 /* AppDelegate.swift in Sources */,

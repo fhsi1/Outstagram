@@ -59,6 +59,23 @@ final class ProfileViewController: UIViewController {
         return button
     }()
     
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0.5
+        layout.minimumInteritemSpacing = 0.5
+        layout.scrollDirection = .vertical
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: "ProfileCollectionViewCell")
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        return collectionView
+        
+    }()
+    
     private let postDataView = ProfileDataView(title: "Posts", count: "323")
     private let followersDataView = ProfileDataView(title: "Follwers", count: "9.78K")
     private let followingDataView = ProfileDataView(title: "Following", count: "535")
@@ -68,6 +85,28 @@ final class ProfileViewController: UIViewController {
         
         setupNavigationBar()
         setupLayout()
+    }
+}
+
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCollectionViewCell", for: indexPath) as? ProfileCollectionViewCell
+        
+        cell?.setup(with: UIImage())
+        return cell ?? UICollectionViewCell()
+    }
+    
+    
+}
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = (collectionView.frame.width / 3) - 1.0
+        return CGSize(width: width, height: width)
     }
 }
 
@@ -99,7 +138,8 @@ private extension ProfileViewController {
             dataStackView,
             nameLabel,
             descriptionLabel,
-            buttonStackView
+            buttonStackView,
+            collectionView
         ].forEach{ view.addSubview($0) }
         
         let inset: CGFloat = 16.0
@@ -135,5 +175,11 @@ private extension ProfileViewController {
             $0.trailing.equalTo(nameLabel.snp.trailing)
         }
         
+        collectionView.snp.makeConstraints {
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.top.equalTo(buttonStackView.snp.bottom).offset(16.0)
+            $0.bottom.equalToSuperview()
+        }
     }
 }
