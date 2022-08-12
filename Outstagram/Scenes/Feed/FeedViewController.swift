@@ -19,6 +19,15 @@ class FeedViewController: UIViewController {
         
         return tableView
     }()
+    
+    private lazy var imagePickerController: UIImagePickerController = {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        
+        return imagePickerController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +51,24 @@ extension FeedViewController: UITableViewDataSource {
     }
 }
 
+// UIImagePickerControllerDelegate 를 사용할 때는 UINavigationControllerDelegate 도 같이 추가
+extension FeedViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    // imageLibrary 에서 선택한 이미지의 수정화면에서 choose 를 눌렀을 때 호출
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 선택된 이미지
+        var selecedImage: UIImage?
+        
+        // info - 선택된 이미지의 정보를 가지고 있는 Dictionary
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            selecedImage = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selecedImage = originalImage
+        }
+        // 해당 delegate method 를 사용하면 처리해주어야 한다.
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+
 private extension FeedViewController {
     func setupNavigationBar() {
         navigationItem.title = "Outstagram"
@@ -50,10 +77,14 @@ private extension FeedViewController {
             image: UIImage(systemName: "plus.app"),
             style: .plain,
             target: self,
-            action: nil
+            action: #selector(didTapUploadButton)
         )
         
         navigationItem.rightBarButtonItem = uploadButton
+    }
+    
+    @objc func didTapUploadButton() {
+        present(imagePickerController, animated: true)
     }
     
     func setupTableView() {
