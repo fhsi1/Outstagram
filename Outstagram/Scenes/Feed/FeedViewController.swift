@@ -66,7 +66,7 @@ extension FeedViewController: UIImagePickerControllerDelegate, UINavigationContr
         }
         // 해당 delegate method 를 사용하면 처리해주어야 한다.
         picker.dismiss(animated: true) { [weak self] in
-            let uploadViewController = UploadViewController()
+            let uploadViewController = UploadViewController(uploadImage: selecedImage ?? UIImage())
             let navigationController = UINavigationController(rootViewController: uploadViewController)
             navigationController.modalPresentationStyle = .fullScreen
             self?.present(navigationController, animated: true)
